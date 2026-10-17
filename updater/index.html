@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'self'">
+  <title>AB1562 TWS Updater</title>
+  <meta name="description" content="H25 cc ultra max / AB1562AE_ENC+ 펌웨어 업데이트">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <h1>AB1562 TWS Updater</h1>
+    <p id="host-note" class="note" hidden></p>
+    <section class="files" aria-label="펌웨어 파일 선택">
+      <h2>펌웨어 파일</h2>
+      <p class="hint">벤더에서 받은 좌우 파일을 선택하세요. 파일은 이 기기 밖으로 전송되지 않습니다.</p>
+      <label class="file" for="left-file">왼쪽 파일</label>
+      <input id="left-file" type="file" accept=".bin">
+      <p id="left-file-name" class="hint"></p>
+      <p id="left-file-status" class="file-status"></p>
+      <label class="file" for="right-file">오른쪽 파일</label>
+      <input id="right-file" type="file" accept=".bin">
+      <p id="right-file-name" class="hint"></p>
+      <p id="right-file-status" class="file-status"></p>
+    </section>
+    <section aria-label="펌웨어 업데이트">
+      <p class="version-label">현재 버전</p>
+      <p id="version" class="version">-</p>
+      <button id="connect" disabled>기기 연결하기</button>
+      <p id="status" role="status" aria-live="polite"></p>
+      <button id="update" hidden disabled>업데이트</button>
+      <button id="reconnect" hidden>다시 연결하기</button>
+      <button id="finish" hidden>업데이트 마무리</button>
+      <div id="progress" role="progressbar" aria-label="업데이트 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" hidden><div id="fill"></div></div>
+      <p id="error" role="alert" hidden></p>
+    </section>
+  </main>
+  <dialog id="confirmation">
+    <form method="dialog">
+      <h2>업데이트할까요?</h2>
+      <p>완료될 때까지 기기 전원을 켜 두고 이 창을 닫지 마세요.</p>
+      <div class="actions"><button value="cancel" class="secondary">취소</button><button value="start">업데이트</button></div>
+    </form>
+  </dialog>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>

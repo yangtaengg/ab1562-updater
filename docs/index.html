@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>문서 · AB1562 TWS Updater</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'self'">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="mark">AB</span>AB1562 TWS Updater</a>
+    <nav class="top"><a href="../check/">호환성 확인</a><a href="../updater/">웹 업데이터</a><a href="../mac/">macOS</a><a href="../docs/">문서</a></nav>
+  </div>
+</header>
+<main class="wrap" style="padding:56px 0 72px">
+  <span class="eyebrow">문서</span>
+  <h1 style="font-size:38px">사용과 복구 안내</h1>
+  <p class="lead">지원 기기, 펌웨어 파일, 연결 방식, 실패했을 때의 대처를 정리했습니다.</p>
+
+  <section class="block">
+    <h2>지원 기기와 버전</h2>
+    <div class="card">
+      <table>
+        <thead><tr><th>항목</th><th>값</th></tr></thead>
+        <tbody>
+          <tr><td>제품</td><td>H25 cc ultra max</td></tr>
+          <tr><td>모듈</td><td>AB1562AE_ENC+ (좌우 각각 _L, _R)</td></tr>
+          <tr><td>칩</td><td>AB1562AE</td></tr>
+          <tr><td>지원 출발 버전</td><td>31.6.25.3, 31.6.25.4, 31.6.25.5, 31.6.25.6, 31.6.25.7, 31.6.25.8, 31.6.25.10, 31.6.25.11, 31.6.25.12</td></tr>
+          <tr><td>대상 패키지</td><td>310.6.25.13</td></tr>
+          <tr><td>확인된 런타임 버전</td><td>31.6.25.13</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note" style="margin-top:14px">목록에 없는 제품, 모듈, 버전은 전송하지 않습니다. 앱은 연결 후 실제 값을 다시 읽고, 하나라도 다르면 중단합니다.</div>
+  </section>
+
+  <section class="block">
+    <h2>펌웨어 파일</h2>
+    <p class="muted">사이트는 펌웨어를 호스팅하지 않습니다. 벤더 배포처에서 받은 파일을 앱에서 직접 선택하세요. 앱은 크기와 SHA-256을 검사합니다.</p>
+    <div class="card">
+      <table>
+        <thead><tr><th>파일 이름</th><th>크기</th><th>SHA-256</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">H25_cc ultra max_AB1562AE_V310.6.25.13_left_FotaPackage.bin</td><td>1,362,026</td><td class="mono">853aefb21415b784ad044456b263fd716e6ebc25d9aecabeb774dc9ab5dfb7f2</td></tr>
+          <tr><td class="mono">H25_cc ultra max_AB1562AE_V310.6.25.13_right_FotaPackage.bin</td><td>1,395,813</td><td class="mono">10061f5d30294403e252d7dcfc14fdeac505d1c75f74eacd90414d7731f8b7f3</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted" style="font-size:12px;margin-top:12px">카탈로그: <code>http://twsfota.198509.xyz/tws_fota_bin/H25/AB1562AE/fota</code> · 2026-10-17 확인 · 실시간 조회가 아닙니다.</p>
+  </section>
+
+  <section class="block">
+    <h2>업데이트 순서</h2>
+    <ol>
+      <li>이어폰 양쪽을 60% 이상 충전하고 케이스에서 꺼냅니다.</li>
+      <li>macOS는 도우미 앱을 실행하고 Chrome에서 <code>http://127.0.0.1:8768/</code>을 엽니다. Windows/Linux는 <a href="../updater/">웹 업데이터</a>를 엽니다.</li>
+      <li>좌우 펌웨어 파일을 선택합니다. 파일이 맞으면 <strong>확인됨</strong>이 표시됩니다.</li>
+      <li><strong>기기 연결하기</strong>를 누르고 제품, 버전, 배터리, 상태 검사를 기다립니다.</li>
+      <li>업데이트 버튼을 누르고 확인 창에서 시작합니다. 완료될 때까지 창을 닫지 마세요.</li>
+      <li>기기가 재시작되면 <strong>다시 연결하기</strong>를 눌러 양쪽 버전을 확인합니다.</li>
+    </ol>
+    <div class="warning"><strong>중간에 끊기면</strong> 앱이 임의로 Commit을 다시 보내지 않습니다. 다시 연결해서 양쪽 상태를 읽고, 이미 전송된 쪽은 SHA-256을 비교해 건너뜁니다.</div>
+  </section>
+
+  <section class="block">
+    <h2>연결 방식</h2>
+    <div class="grid two">
+      <div class="card"><h3>macOS</h3><p class="muted" style="font-size:13px">Chrome의 Web Serial은 macOS가 알려주는 RFCOMM 채널 1로 열려고 하지만 실제 FOTA 채널은 3입니다. 웹 API에는 채널 선택 기능이 없어 도우미 앱이 필요합니다.</p><p><a class="btn small" href="../mac/">macOS 도우미</a></p></div>
+      <div class="card"><h3>Windows / Linux</h3><p class="muted" style="font-size:13px">Chrome 또는 Edge의 Web Serial을 사용하는 실험적 경로입니다. OS의 Bluetooth 스택이 서비스 UUID로 채널을 해석하므로 macOS와 다를 수 있지만, 이 프로젝트에서 실물 검증은 아직 macOS에서만 했습니다.</p><p><a class="btn small secondary" href="../updater/">웹 업데이터 열기</a></p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>자주 묻는 질문</h2>
+    <div class="grid two">
+      <div class="card"><h3>Chrome만으로는 왜 안 되나요?</h3><p class="muted" style="font-size:13px">macOS의 RFCOMM 채널 해석 문제와 BLE 서비스 부재 때문입니다. 자세한 내용은 <a href="../#mac">첫 화면</a>에 정리했습니다.</p></div>
+      <div class="card"><h3>업데이트 후 버전이 안 바뀌었어요.</h3><p class="muted" style="font-size:13px">Commit 응답이 유실됐을 수 있습니다. 다시 전송하지 말고 재연결해서 양쪽 버전과 상태를 확인하세요. 앱은 확인된 버전만 완료로 기록합니다.</p></div>
+      <div class="card"><h3>배터리가 부족하다고 나옵니다.</h3><p class="muted" style="font-size:13px">양쪽 모두 60% 이상이어야 합니다. 충전 후 다시 연결하세요.</p></div>
+      <div class="card"><h3>파일이 맞지 않는다고 나옵니다.</h3><p class="muted" style="font-size:13px">좌우 파일을 바꿔 선택했거나, 다른 배포 패키지일 수 있습니다. 위 표의 이름과 SHA-256을 확인하세요.</p></div>
+      <div class="card"><h3>다른 모델도 되나요?</h3><p class="muted" style="font-size:13px">지원하지 않습니다. 유사한 AB1562 계열이라도 파티션과 프로토콜이 다를 수 있습니다.</p></div>
+      <div class="card"><h3>로그를 보내려면?</h3><p class="muted" style="font-size:13px">macOS 앱 창의 로그를 복사하거나, 웹 업데이터의 브라우저 콘솔 오류를 함께 보내 주세요. 기기 상태와 버전, 파일 해시가 도움이 됩니다.</p></div>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="wrap"><div>AB1562 TWS Updater · 비공식 도구</div><nav><a href="../legal/disclaimer.html">면책</a><a href="../legal/privacy.html">개인정보</a></nav></div></footer>
+</body>
+</html>

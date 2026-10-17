@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>macOS 도우미 · AB1562 TWS Updater</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'self'">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="../"><span class="mark">AB</span>AB1562 TWS Updater</a>
+    <nav class="top"><a href="../check/">호환성 확인</a><a href="../updater/">웹 업데이터</a><a href="../mac/">macOS</a><a href="../docs/">문서</a></nav>
+  </div>
+</header>
+<main class="wrap" style="padding:56px 0 72px">
+  <span class="eyebrow">macOS 13+ · Apple Silicon · 베타</span>
+  <h1 style="font-size:38px">macOS 도우미 앱</h1>
+  <p class="lead">macOS Chrome은 이 기기의 RFCOMM 채널 3을 직접 열 수 없습니다. 도우미 앱이 그 연결만 대신하고, 업데이트 화면은 Chrome에서 동작합니다.</p>
+  <div class="grid two" style="align-items:start">
+    <div class="card">
+      <h2>내려받기</h2>
+      <p class="muted" style="font-size:13px">펌웨어 파일은 포함되어 있지 않습니다. 앱을 실행한 뒤 벤더에서 받은 좌우 파일을 직접 선택합니다.</p>
+      <p><a class="btn" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-beta.1/AB1562-Updater-macOS-beta.zip">macOS 베타 내려받기 (123 KB)</a></p>
+      <p class="muted" style="font-size:12px">버전 0.1.0-beta.1 · ad-hoc 서명 · 공증 전 베타</p>
+      <div class="note"><strong>Gatekeeper 경고</strong> 공증 전 베타라서 처음 실행할 때 경고가 나옵니다. Finder에서 앱을 우클릭하고 <strong>열기</strong>를 선택하세요. 그래도 막히면 시스템 설정 &gt; 개인정보 보호 및 보안에서 확인 없이 열기를 선택합니다.</div>
+    </div>
+    <div class="card">
+      <h3>실행 순서</h3>
+      <ol>
+        <li>zip을 풀고 <code>AB1562 Updater.app</code>을 엽니다.</li>
+        <li>Bluetooth 접근을 허용합니다.</li>
+        <li>앱 창의 <strong>Chrome 업데이트 화면 열기</strong>를 누르거나 Chrome에서 <code>http://127.0.0.1:8768/</code>을 엽니다.</li>
+        <li>좌우 펌웨어 파일을 선택하고, <strong>기기 연결하기</strong>를 누릅니다.</li>
+        <li>사전 검사가 통과하면 <strong>업데이트</strong>를 누르고 확인합니다.</li>
+      </ol>
+      <p class="muted" style="font-size:12px">앱은 <code>127.0.0.1:8768</code>에서만 요청을 받고, 사용자가 확인하기 전에는 기기 변경 명령을 거절합니다.</p>
+    </div>
+  </div>
+
+  <section class="block">
+    <div class="section-head"><div><h2>준비물</h2></div></div>
+    <div class="grid">
+      <div class="card"><h3>macOS 13 이상</h3><p class="muted" style="font-size:13px">현재 베타는 Apple Silicon(arm64) 빌드입니다. Intel 빌드는 아직 없습니다.</p></div>
+      <div class="card"><h3>Chrome</h3><p class="muted" style="font-size:13px">업데이트 화면은 Chrome에서 엽니다. Chrome이 없으면 앱의 주소를 다른 브라우저에 직접 입력해도 화면은 열립니다.</p></div>
+      <div class="card"><h3>펌웨어 파일</h3><p class="muted" style="font-size:13px">벤더 배포처에서 받은 좌우 <code>.bin</code> 파일이 필요합니다. 사이트는 파일을 보관하지 않습니다.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-head"><div><h2>펌웨어 파일 구하기</h2></div></div>
+    <div class="card">
+      <p class="muted" style="font-size:13px">벤더 카탈로그에서 아래 파일을 받아 주세요. 사이트나 앱은 이 파일을 재배포하지 않습니다.</p>
+      <table>
+        <thead><tr><th>파일</th><th>크기</th><th>SHA-256</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">..._left_FotaPackage.bin</td><td>1,362,026</td><td class="mono">853aefb2...dfb7f2</td></tr>
+          <tr><td class="mono">..._right_FotaPackage.bin</td><td>1,395,813</td><td class="mono">10061f5d...f8b7f3</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:14px"><a class="btn small secondary" href="../docs/">파일 이름과 해시 전체 보기</a></p>
+      <p class="muted" style="font-size:12px;margin-top:12px">카탈로그 주소는 <code>http://twsfota.198509.xyz/tws_fota_bin/H25/AB1562AE/fota</code>입니다. HTTPS를 제공하지 않아 다운로드 경로는 안전하지 않을 수 있습니다. 앱이 SHA-256을 다시 검사하므로 변조된 파일은 전송하지 않습니다.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="section-head"><div><h2>제거</h2></div></div>
+    <p class="muted">앱을 종료하고 <code>AB1562 Updater.app</code>을 휴지통으로 옮기면 끝입니다. 베타 앱은 로그인 항목이나 시스템 설정을 변경하지 않습니다.</p>
+  </section>
+</main>
+<footer class="footer"><div class="wrap"><div>AB1562 TWS Updater · 비공식 도구 · Airoha, FlyCC, H25와 무관합니다.</div><nav><a href="../docs/">문서</a><a href="../legal/disclaimer.html">면책</a><a href="../legal/privacy.html">개인정보</a></nav></div></footer>
+</body>
+</html>

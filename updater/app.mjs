@@ -265,7 +265,7 @@ async function boot() {
     const isMac = /Mac/i.test(navigator.platform || navigator.userAgent);
     $('host-note').hidden = false;
     $('host-note').textContent = isMac
-      ? 'macOS에서는 Chrome만으로 기기의 RFCOMM 채널을 열 수 없습니다. macOS 도우미 앱을 사용해 주세요.'
+      ? 'macOS에서는 Chrome만으로 기기의 RFCOMM 채널을 열 수 없습니다. macOS 앱 또는 Chrome 도우미를 사용해 주세요.'
       : '웹 업데이터는 실험적입니다. Chrome 또는 Edge에서 Serial 권한을 허용하고 기기를 연결해 주세요.';
   }
   controls();

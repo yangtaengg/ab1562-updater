@@ -1,69 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AB1562 TWS Updater</title>
-<meta name="description" content="Firmware updates for H25 cc ultra max. One macOS app, built-in firmware, no file picker.">
+<meta name="description" content="Firmware updates for H25 cc ultra max. Download AB1562 TWS Updater for macOS.">
+<meta name="theme-color" content="#040706">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
 <link rel="stylesheet" href="./assets/site.css">
 <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AB1562 TWS Updater">
+<meta property="og:description" content="Firmware updates. Simplified. Download for macOS.">
+<meta property="og:image" content="https://yangtaengg.github.io/ab1562-updater/assets/app-icon.png">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+
 <header class="nav">
   <div class="nav-inner">
-    <a class="nav-brand" href="./">
+    <a class="brand" href="./" aria-label="AB1562 TWS Updater home">
       <img src="./assets/app-icon.png" alt="" width="22" height="22">
-      <span>AB1562 TWS Updater</span>
+      <span>AB1562</span>
     </a>
-    <a class="nav-link" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-electron.2/AB1562-TWS-Updater-0.1.0-arm64.dmg">Download</a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#how">How to use</a>
+      <a class="nav-download" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-electron.2/AB1562-TWS-Updater-0.1.0-arm64.dmg">Download</a>
+    </nav>
   </div>
 </header>
 
-<main>
+<main id="main">
   <section class="hero">
     <div class="hero-inner">
-      <h1>Firmware updates.<br><span>Simplified.</span></h1>
-      <p class="sub">For H25 cc ultra max. Built-in firmware, one window, no file picker.</p>
-      <a class="cta" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-electron.2/AB1562-TWS-Updater-0.1.0-arm64.dmg">Download for macOS</a>
-      <p class="meta">137 MB / macOS 13+ / Apple Silicon</p>
+      <img class="app-icon" src="./assets/app-icon.png" alt="AB1562 TWS Updater app icon" width="88" height="88">
+      <h1>Firmware updates.<br> <span>Simplified.</span></h1>
+      <p class="lede">For H25 cc ultra max.</p>
+      <a class="btn" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-electron.2/AB1562-TWS-Updater-0.1.0-arm64.dmg">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 20h14"/></svg>
+        Download for macOS
+      </a>
+      <p class="meta"><span class="meta-line">Version 0.1.0 beta <span class="sep">·</span> 137 MB</span><span class="meta-line"> <span class="sep">·</span> <span class="nw">macOS 13+</span> <span class="sep">·</span> <span class="nw">Apple silicon</span></span></p>
     </div>
-    <div class="showcase">
-      <div class="window" aria-hidden="true">
-        <div class="chrome"><span></span><span></span><span></span><p>AB1562 TWS Updater</p></div>
-        <div class="content">
-          <div class="status"><i></i>Connected</div>
-          <p class="label">Current version</p>
-          <p class="version">31.6.25.13</p>
-          <div class="status-card"><span class="check">✓</span><div><strong>You're up to date</strong><p>Both earbuds verified</p></div></div>
-          <div class="row"><span>Right</span><span>31.6.25.13</span><em>Ready</em></div>
-          <div class="row"><span>Left</span><span>31.6.25.13</span><em>Ready</em></div>
+
+    <div class="stage">
+      <div class="stage-halo" aria-hidden="true"></div>
+      <div class="window" role="img" aria-label="AB1562 TWS Updater window showing H25 cc ultra max connected with firmware 31.6.25.13 up to date">
+        <div class="window-bar">
+          <div class="lights" aria-hidden="true"><i></i><i></i><i></i></div>
+          <p>AB1562 TWS Updater</p>
+        </div>
+        <div class="window-body">
+          <div class="app-head">
+            <img class="app-mini" src="./assets/app-icon.png" alt="" width="44" height="44">
+            <div class="app-id">
+              <p class="micro">H25 cc ultra max</p>
+              <p class="app-name">AB1562AE_ENC+</p>
+            </div>
+            <span class="status"><i></i>Connected</span>
+          </div>
+
+          <div class="fw-card">
+            <div>
+              <p class="micro">Firmware</p>
+              <p class="fw-version">31.6.25.13</p>
+            </div>
+            <div class="fw-state">
+              <span class="check-ring">
+                <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.2 4.2L19 7"/></svg>
+              </span>
+              <span>Up to date</span>
+            </div>
+          </div>
+
+          <div class="buds">
+            <div class="bud">
+              <div><span>Left</span><strong>31.6.25.13</strong></div>
+              <em>Ready</em>
+            </div>
+            <div class="bud">
+              <div><span>Right</span><strong>31.6.25.13</strong></div>
+              <em>Ready</em>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="specs">
-    <div class="specs-inner">
-      <div><p>Device</p><strong>H25 cc ultra max</strong></div>
-      <div><p>Module</p><strong>AB1562AE_ENC+</strong></div>
-      <div><p>Package</p><strong>310.6.25.13</strong></div>
+  <section class="how" id="how">
+    <div class="how-inner">
+      <h2>How to use.</h2>
+      <ol class="steps">
+        <li class="step">
+          <div class="step-top">
+            <span class="step-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="3"/><path d="M3 9h18"/><circle cx="6.2" cy="6.75" r=".7" fill="currentColor" stroke="none"/><path d="M10 13h4"/></svg>
+            </span>
+            <span class="step-num">01</span>
+          </div>
+          <h3>Open the app</h3>
+        </li>
+        <li class="step">
+          <div class="step-top">
+            <span class="step-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m7 7 10 10-5 4V3l5 4L7 17"/></svg>
+            </span>
+            <span class="step-num">02</span>
+          </div>
+          <h3>Connect your earbuds</h3>
+        </li>
+        <li class="step">
+          <div class="step-top">
+            <span class="step-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-.7 4.7"/><path d="M20 4.5V11h-6.5"/></svg>
+            </span>
+            <span class="step-num">03</span>
+          </div>
+          <h3>Update firmware</h3>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <section class="closing">
-    <img class="closing-icon" src="./assets/app-icon.png" alt="" width="56" height="56">
-    <a class="cta" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-electron.2/AB1562-TWS-Updater-0.1.0-arm64.dmg">Download for macOS</a>
-    <p class="meta">Version 0.1.0 beta / 137 MB</p>
+  <section class="get">
+    <div class="get-inner">
+      <img class="get-icon" src="./assets/app-icon.png" alt="" width="76" height="76">
+      <h2>Download<span>.</span></h2>
+      <a class="btn" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-electron.2/AB1562-TWS-Updater-0.1.0-arm64.dmg">
+        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="m7.5 10.5 4.5 4.5 4.5-4.5"/><path d="M5 20h14"/></svg>
+        Download for macOS
+      </a>
+      <p class="meta">Version 0.1.0 beta <span class="sep">·</span> 137 MB</p>
+      <p class="note">First launch: right-click the app, then choose Open.</p>
+    </div>
   </section>
 </main>
 
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-copy">
-      <p>Unofficial tool. Not affiliated with Airoha, FlyCC, or H25. Firmware updates can damage your device.</p>
-      <p>Version 0.1.0 beta. If Gatekeeper blocks the app, right-click and choose Open.</p>
-    </div>
+    <p>Unofficial tool. Not affiliated with Airoha, FlyCC, or H25. Firmware updates can damage your device.</p>
     <a href="https://github.com/yangtaengg/ab1562-updater/releases/tag/v0.1.0-electron.2">Release notes</a>
   </div>
 </footer>

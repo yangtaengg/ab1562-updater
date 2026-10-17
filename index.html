@@ -3,108 +3,65 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AB1562 TWS Updater — Firmware updates for H25</title>
-<meta name="description" content="A small macOS app that reads both earbuds, verifies the firmware, and guides you through a safe H25 update. The supported package is built in.">
+<title>AB1562 TWS Updater</title>
+<meta name="description" content="Firmware updates for H25 cc ultra max. One macOS app, built-in firmware, no file picker.">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'none'">
 <link rel="stylesheet" href="./assets/site.css">
 <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="./">
-      <img src="./assets/app-icon.png" alt="" width="32" height="32">
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-brand" href="./">
+      <img src="./assets/app-icon.png" alt="" width="22" height="22">
       <span>AB1562 TWS Updater</span>
     </a>
-    <a class="btn btn-small" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-electron.2/AB1562-TWS-Updater-0.1.0-arm64.dmg">Download</a>
+    <a class="nav-link" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-electron.2/AB1562-TWS-Updater-0.1.0-arm64.dmg">Download</a>
   </div>
 </header>
 
 <main>
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <span class="eyebrow">For H25 cc ultra max</span>
-        <h1>Firmware updates,<br><span>without the guesswork.</span></h1>
-        <p class="lead">A small macOS app that reads both earbuds, verifies the firmware, and guides you through a safe update. The supported package is built in, so there is no file picker, no terminal, and no separate browser helper.</p>
-        <div class="cta-row">
-          <a class="btn btn-large" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-electron.2/AB1562-TWS-Updater-0.1.0-arm64.dmg">Download for macOS</a>
-          <span class="cta-meta"><strong>137 MB</strong><br>macOS 13+ / Apple Silicon</span>
+    <div class="hero-inner">
+      <h1>Firmware updates.<br><span>Simplified.</span></h1>
+      <p class="sub">For H25 cc ultra max. Built-in firmware, one window, no file picker.</p>
+      <a class="cta" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-electron.2/AB1562-TWS-Updater-0.1.0-arm64.dmg">Download for macOS</a>
+      <p class="meta">137 MB / macOS 13+ / Apple Silicon</p>
+      <p class="fine">Version 0.1.0 beta. Right-click to open on first launch.</p>
+    </div>
+    <div class="showcase">
+      <div class="window" aria-hidden="true">
+        <div class="chrome"><span></span><span></span><span></span><p>AB1562 TWS Updater</p></div>
+        <div class="content">
+          <div class="status"><i></i>Connected</div>
+          <p class="label">Current version</p>
+          <p class="version">31.6.25.13</p>
+          <div class="status-card"><span class="check">✓</span><div><strong>You're up to date</strong><p>Both earbuds verified</p></div></div>
+          <div class="row"><span>Right</span><span>31.6.25.13</span><em>Ready</em></div>
+          <div class="row"><span>Left</span><span>31.6.25.13</span><em>Ready</em></div>
         </div>
-        <p class="fine">Version 0.1.0 beta. Ad-hoc signed. On first launch, right-click the app and choose Open.</p>
-      </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="app-window">
-          <div class="window-bar"><span></span><span></span><span></span><p>AB1562 TWS Updater</p></div>
-          <div class="window-body">
-            <div class="status-line"><span class="dot"></span> Connected</div>
-            <p class="label">Current version</p>
-            <p class="big-version">31.6.25.13</p>
-            <div class="check-card">
-              <span class="check">✓</span>
-              <div><strong>You're up to date</strong><p>Both earbuds verified</p></div>
-            </div>
-            <div class="device-row"><span>Right</span><span>31.6.25.13</span><span class="ready">Ready</span></div>
-            <div class="device-row"><span>Left</span><span>31.6.25.13</span><span class="ready">Ready</span></div>
-          </div>
-        </div>
-        <div class="glow"></div>
       </div>
     </div>
   </section>
 
-  <section class="features">
-    <div class="wrap">
-      <div class="section-head"><p class="kicker">What it does</p><h2>Small app. Careful update.</h2></div>
-      <div class="feature-grid">
-        <article class="feature"><span class="num">01</span><h3>Reads before it writes</h3><p>Checks model, module, battery, partitions, and state on both earbuds before anything is sent.</p></article>
-        <article class="feature"><span class="num">02</span><h3>Firmware included</h3><p>The supported H25 package ships with the app. No downloads, no file picker, no version hunting.</p></article>
-        <article class="feature"><span class="num">03</span><h3>Recovery-aware</h3><p>If a transfer is interrupted, it verifies what is already on the device before continuing.</p></article>
-      </div>
+  <section class="specs">
+    <div class="specs-inner">
+      <div><p>Device</p><strong>H25 cc ultra max</strong></div>
+      <div><p>Module</p><strong>AB1562AE_ENC+</strong></div>
+      <div><p>Package</p><strong>310.6.25.13</strong></div>
     </div>
   </section>
 
-  <section class="details">
-    <div class="wrap details-grid">
-      <div class="detail-card">
-        <p class="kicker">Supported device</p>
-        <h2>H25 cc ultra max</h2>
-        <dl class="spec">
-          <div><dt>Module</dt><dd>AB1562AE_ENC+</dd></div>
-          <div><dt>Chip</dt><dd>AB1562AE</dd></div>
-          <div><dt>Target package</dt><dd>310.6.25.13</dd></div>
-          <div><dt>Starting versions</dt><dd>31.6.25.3 to 31.6.25.12</dd></div>
-        </dl>
-      </div>
-      <div class="detail-card">
-        <p class="kicker">Before you start</p>
-        <h2>Three quick checks</h2>
-        <ul class="checklist">
-          <li>macOS 13 or later on Apple Silicon</li>
-          <li>Both earbuds charged above 60%</li>
-          <li>Earbuds connected in macOS Bluetooth</li>
-        </ul>
-        <p class="small">Keep the Mac awake and the app open during the update.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="download-section">
-    <div class="wrap download-inner">
-      <div>
-        <p class="kicker">Ready to update?</p>
-        <h2>Update from one window.</h2>
-        <p class="muted">Download, connect, review, update. No setup beyond allowing Bluetooth.</p>
-      </div>
-      <a class="btn btn-large btn-light" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-electron.2/AB1562-TWS-Updater-0.1.0-arm64.dmg">Download for macOS</a>
-    </div>
+  <section class="closing">
+    <img class="closing-icon" src="./assets/app-icon.png" alt="" width="56" height="56">
+    <a class="cta" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-electron.2/AB1562-TWS-Updater-0.1.0-arm64.dmg">Download for macOS</a>
+    <p class="meta">Version 0.1.0 beta / 137 MB</p>
   </section>
 </main>
 
 <footer class="footer">
-  <div class="wrap footer-inner">
-    <div class="footer-brand"><img src="./assets/app-icon.png" alt="" width="24" height="24"><span>AB1562 TWS Updater</span></div>
-    <p>Unofficial tool. Not affiliated with Airoha, FlyCC, or H25. Firmware updates can damage your device. Use at your own risk.</p>
+  <div class="footer-inner">
+    <p>Unofficial tool. Not affiliated with Airoha, FlyCC, or H25. Firmware updates can damage your device.</p>
     <a href="https://github.com/yangtaengg/ab1562-updater/releases/tag/v0.1.0-electron.2">Release notes</a>
   </div>
 </footer>

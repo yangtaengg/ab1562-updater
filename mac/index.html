@@ -12,73 +12,51 @@
 <header class="site">
   <div class="wrap">
     <a class="brand" href="../"><span class="mark">AB</span>AB1562 TWS Updater</a>
-    <nav class="top"><a href="../check/">호환성 확인</a><a href="../updater/">웹 업데이터</a><a href="../mac/">macOS</a><a href="../docs/">문서</a></nav>
+    <nav class="top"><a href="../check/">호환성 확인</a><a href="../mac/">macOS</a><a href="../docs/">문서</a></nav>
   </div>
 </header>
 <main class="wrap" style="padding:56px 0 72px">
   <span class="eyebrow">macOS 13+ · Apple Silicon · 베타</span>
   <h1 style="font-size:38px">macOS 앱</h1>
-  <p class="lead">Chrome 없이 한 창에서 업데이트하려면 데스크톱 앱을, Chrome을 그대로 쓰려면 작은 도우미를 선택하세요. 둘 다 펌웨어를 포함하지 않고, 같은 로컬 연결 엔진을 사용합니다.</p>
+  <p class="lead">앱 하나로 연결과 업데이트를 끝냅니다. 지원 펌웨어 패키지가 앱에 포함되어 있어 파일을 고를 필요가 없습니다.</p>
   <div class="grid two" style="align-items:start">
     <div class="card">
       <span class="badge">권장</span>
-      <h2 style="font-size:22px;margin:12px 0 8px">데스크톱 앱 (Electron)</h2>
-      <p class="muted" style="font-size:13px">앱 안에 연결 도우미가 들어 있어 Chrome이 필요 없습니다. 창 하나에서 파일 선택, 연결, 업데이트를 모두 합니다.</p>
-      <p><a class="btn" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-electron.1/AB1562-TWS-Updater-0.1.0-arm64.dmg">macOS 앱 내려받기 (135 MB)</a></p>
-      <p class="muted" style="font-size:12px">버전 0.1.0 · Electron 44.9.0 · ad-hoc 서명 · 공증 전 베타<br>SHA-256: <code>e461bb29cf6496ab1e33c79ce1ce960b6fb1b376652420295d0c7df8a66fc6bf</code></p>
+      <h2 style="font-size:22px;margin:12px 0 8px">AB1562 TWS Updater</h2>
+      <p class="muted" style="font-size:13px">Electron 앱 안에 RFCOMM 연결 엔진이 들어 있습니다. Chrome은 필요하지 않습니다.</p>
+      <p><a class="btn" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-electron.2/AB1562-TWS-Updater-0.1.0-arm64.dmg">macOS 앱 내려받기 (137 MB)</a></p>
+      <p class="muted" style="font-size:12px">버전 0.1.0 · Electron 44.9.0 · ad-hoc 서명 · 공증 전 베타<br>SHA-256: <code>4fc1b781c8586bee375e502293985ebac6254ea9462f50cb7e8bf0f29e1ea59a</code></p>
       <div class="note"><strong>Gatekeeper 경고</strong> 공증 전이라 처음 실행할 때 경고가 나옵니다. Finder에서 앱을 우클릭하고 <strong>열기</strong>를 선택하세요. 그래도 막히면 시스템 설정 &gt; 개인정보 보호 및 보안에서 확인 없이 열기를 선택합니다.</div>
       <h3 style="margin-top:18px">실행 순서</h3>
       <ol>
         <li>DMG를 열고 <code>AB1562 TWS Updater.app</code>을 Applications로 드래그합니다.</li>
         <li>앱을 열고 Bluetooth 접근을 허용합니다.</li>
-        <li>좌우 펌웨어 파일을 선택하고 <strong>기기 연결하기</strong>를 누릅니다.</li>
-        <li>사전 검사가 통과하면 <strong>업데이트</strong>를 누르고 확인합니다.</li>
+        <li><strong>기기 연결하기</strong>를 누르고 사전 검사를 기다립니다.</li>
+        <li>업데이트가 있으면 <strong>업데이트</strong>를 누르고 확인합니다.</li>
       </ol>
     </div>
-    <div class="card">
-      <h2 style="font-size:22px;margin:0 0 8px">Chrome 도우미 (작은 앱)</h2>
-      <p class="muted" style="font-size:13px">Chrome을 그대로 쓰고 싶을 때 쓰는 123 KB 도우미입니다. 앱을 실행한 뒤 Chrome에서 <code>127.0.0.1:8768</code>을 엽니다.</p>
-      <p><a class="btn secondary" href="https://github.com/yangtaengg/ab1562-updater/releases/download/v0.1.0-beta.2/AB1562-Updater-macOS-beta.zip">Chrome 도우미 내려받기 (123 KB)</a></p>
-      <p class="muted" style="font-size:12px">버전 0.1.0-beta.2 · ad-hoc 서명 · 공증 전 베타<br>SHA-256: <code>3437410051b1d52787185e5b10666c8ce8ccc1240156df9c921fca10d1e51d3a</code></p>
-      <h3 style="margin-top:18px">실행 순서</h3>
-      <ol>
-        <li>zip을 풀고 <code>AB1562 Updater.app</code>을 엽니다.</li>
-        <li>Bluetooth 접근을 허용합니다.</li>
-        <li>앱 창의 <strong>Chrome 업데이트 화면 열기</strong>를 누르거나 Chrome에서 <code>http://127.0.0.1:8768/</code>을 엽니다.</li>
-        <li>좌우 파일을 선택하고 연결한 뒤 업데이트합니다.</li>
-      </ol>
-      <p class="muted" style="font-size:12px">앱은 <code>127.0.0.1:8768</code>에서만 요청을 받습니다. 로그인 항목이나 시스템 설정은 변경하지 않습니다.</p>
+    <div class="side">
+      <div class="card">
+        <h3>준비물</h3>
+        <dl class="kv">
+          <dt>OS</dt><dd>macOS 13 이상</dd>
+          <dt>CPU</dt><dd>Apple Silicon (arm64)</dd>
+          <dt>Bluetooth</dt><dd>이어폰을 Mac에 연결</dd>
+          <dt>펌웨어</dt><dd>앱에 포함 (310.6.25.13)</dd>
+        </dl>
+      </div>
+      <div class="card">
+        <h3>포함된 패키지</h3>
+        <p class="muted" style="font-size:13px">앱은 지원 기기용 좌우 펌웨어를 포함합니다. 연결 후 제품, 모듈, 버전, 배터리, 파티션, 상태를 검사하고, 지원 목록과 일치할 때만 전송합니다.</p>
+        <p class="muted" style="font-size:12px">대상 패키지 310.6.25.13 · 확인된 런타임 31.6.25.13</p>
+      </div>
+      <div class="warning">공개 베타입니다. 서명과 공증이 없어 다른 Mac에서는 경고가 날 수 있습니다. 펌웨어 업데이트는 기기를 손상시킬 수 있습니다.</div>
     </div>
   </div>
 
   <section class="block">
-    <div class="section-head"><div><h2>준비물</h2></div></div>
-    <div class="grid">
-      <div class="card"><h3>macOS 13 이상</h3><p class="muted" style="font-size:13px">현재 베타는 Apple Silicon(arm64) 빌드입니다. Intel 빌드는 아직 없습니다.</p></div>
-      <div class="card"><h3>Bluetooth</h3><p class="muted" style="font-size:13px">이어폰을 Mac의 Bluetooth 설정에서 연결해 주세요. 앱이 연결된 기기를 찾습니다.</p></div>
-      <div class="card"><h3>펌웨어 파일</h3><p class="muted" style="font-size:13px">벤더 배포처에서 받은 좌우 <code>.bin</code> 파일이 필요합니다. 사이트는 파일을 보관하지 않습니다.</p></div>
-    </div>
-  </section>
-
-  <section class="block">
-    <div class="section-head"><div><h2>펌웨어 파일 구하기</h2></div></div>
-    <div class="card">
-      <p class="muted" style="font-size:13px">벤더 카탈로그에서 아래 파일을 받아 주세요. 사이트나 앱은 이 파일을 재배포하지 않습니다.</p>
-      <table>
-        <thead><tr><th>파일</th><th>크기</th><th>SHA-256</th></tr></thead>
-        <tbody>
-          <tr><td class="mono">..._left_FotaPackage.bin</td><td>1,362,026</td><td class="mono">853aefb2...dfb7f2</td></tr>
-          <tr><td class="mono">..._right_FotaPackage.bin</td><td>1,395,813</td><td class="mono">10061f5d...f8b7f3</td></tr>
-        </tbody>
-      </table>
-      <p style="margin-top:14px"><a class="btn small secondary" href="../docs/">파일 이름과 해시 전체 보기</a></p>
-      <p class="muted" style="font-size:12px;margin-top:12px">카탈로그 주소는 <code>http://twsfota.198509.xyz/tws_fota_bin/H25/AB1562AE/fota</code>입니다. HTTPS를 제공하지 않아 다운로드 경로는 안전하지 않을 수 있습니다. 앱이 SHA-256을 다시 검사하므로 변조된 파일은 전송하지 않습니다.</p>
-    </div>
-  </section>
-
-  <section class="block">
     <div class="section-head"><div><h2>제거</h2></div></div>
-    <p class="muted">앱을 종료하고 Applications 또는 받은 폴더에서 휴지통으로 옮기면 끝입니다. 두 베타 앱 모두 로그인 항목이나 시스템 설정을 변경하지 않습니다.</p>
+    <p class="muted">앱을 종료하고 Applications에서 휴지통으로 옮기면 끝입니다. 베타 앱은 로그인 항목이나 시스템 설정을 변경하지 않습니다.</p>
   </section>
 </main>
 <footer class="footer"><div class="wrap"><div>AB1562 TWS Updater · 비공식 도구 · Airoha, FlyCC, H25와 무관합니다.</div><nav><a href="../docs/">문서</a><a href="../legal/disclaimer.html">면책</a><a href="../legal/privacy.html">개인정보</a></nav></div></footer>
